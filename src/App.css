@@ -1,13 +1,12 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
 }
 
 body {
   overflow: hidden scroll;
-  padding-right: var(--scrollbar-width);
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   text-size-adjust: none;
@@ -16,4 +15,144 @@ body {
     "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 400;
   font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: #dedede;
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c6c6c6;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+h1 {
+  font-size: 23px;
+  font-weight: 600;
+  color: #1a1a1a;
+  letter-spacing: -0.44px;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-top {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.header-top-content {
+  max-width: 1130px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.header-bottom {
+  height: 46px;
+  display: flex;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.header-bottom-content {
+  max-width: 1130px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-nav {
+  display: flex;
+  gap: 24px;
+  height: 100%;
+  align-items: center;
+}
+
+.main-nav .indicator {
+  position: absolute;
+  bottom: -1px;
+  height: 2px;
+  background-color: #2c2d30;
+  transition: all 0.3225s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.app-header a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.app-header a:hover {
+  color: #000;
+}
+
+.app-header a.active {
+  color: #000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  color: #000 !important;
+  height: 64px;
+}
+
+.right-nav {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.content {
+  flex: 1;
+  padding: 24px;
+  max-width: 1130px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.page-title p {
+  font-size: 16px;
+  color: #5f5f5f;
+  margin: 0;
+}
+
+.page section {
+  margin-top: 48px;
 }
