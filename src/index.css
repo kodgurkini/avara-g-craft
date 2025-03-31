@@ -27,7 +27,7 @@
   --color-gray-900: oklch(12% 5% 264deg / 90%);
   --color-gray-950: oklch(12% 5% 264deg / 95%);
 
-  --symbol-color: #7ac5ff;
+  --symbol-color: #b9ffee;
   --symbol-color-dark: color-mix(in srgb, var(--symbol-color) 80%, black);
   --symbol-color-light: color-mix(in srgb, var(--symbol-color) 80%, white);
   --symbol-color-dark-alt: color-mix(

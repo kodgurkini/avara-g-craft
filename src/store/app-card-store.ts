@@ -14,8 +14,8 @@ interface AppCardState {
 }
 
 export const useAppCardStore = create<AppCardState>()((set, get) => ({
-  appName: 'App Name',
-  symbolColor: '#7ac5ff',
+  appName: 'Lens app',
+  symbolColor: '#B9FFEE',
   symbolShape: 0,
   size: 'large',
   

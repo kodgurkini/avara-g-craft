@@ -6,7 +6,7 @@ import "../styles/app-card.css";
 import Input from "../components/input";
 import { shapes } from "../components/shape-data";
 import { Popover as BasePopover } from "@base-ui-components/react/popover";
-import DropdownPopover from "../components/popover";
+import DropdownPopover from "../components/dropdown-popover";
 import { HexColorPicker } from "react-colorful";
 
 function AppCardPage() {

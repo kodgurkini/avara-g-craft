@@ -27,7 +27,9 @@ const AppSymbol = ({
       >
         <path
           d={shape.path}
-          fill="#808183"
+          fill="none"
+          stroke="var(--color-gray-800)"
+          strokeWidth="8"
           transform="translate(10 10) scale(0.96)"
         />
       </svg>

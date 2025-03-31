@@ -1,13 +1,22 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Logo from "../components/logo";
 import NavItem from "../components/nav-item";
 import { useTabIndicator } from "../hooks/use-tab-indicator";
+import { useEffect } from "react";
+
+let isFirstLoad = true;
 
 function RootLayout() {
   const tabsListRef = useTabIndicator();
+  const location = useLocation();
+
+  useEffect(() => {
+    isFirstLoad = false;
+  }, []);
 
   return (
     <div className="app">
+      {!isFirstLoad && <div className="progress-bar" key={location.pathname} />}
       <header className="app-header">
         <div className="header-top">
           <div className="header-top-content">

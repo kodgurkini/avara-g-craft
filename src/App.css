@@ -142,6 +142,12 @@
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
 .icon-box {
   display: flex;
   justify-content: center;
@@ -152,9 +158,58 @@
   max-height: 32px;
   border-radius: 50%;
   background-color: rgba(44, 45, 48, 0.03);
-  color: rgba(44, 45, 48, 0.6);
+  color: rgba(44, 45, 48, 0.5);
   transition-duration: 200ms;
   cursor: pointer;
   padding: 0;
   border: none;
+  --rotate: 0deg;
+}
+
+.icon-box:hover {
+  background-color: rgba(44, 45, 48, 0.06);
+  color: rgba(44, 45, 48, 1);
+}
+
+.icon-box:active {
+  transform: scale(0.925);
+}
+
+.icon-box svg {
+  transform: rotate(var(--rotate));
+}
+
+.icon-box:active svg {
+  --rotate: 360deg;
+  transition: --rotate 0.4s ease-out;
+}
+
+@keyframes fill-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes empty-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--symbol-color);
+  z-index: 999;
+  animation: fill-right 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards,
+    empty-right 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
 }
