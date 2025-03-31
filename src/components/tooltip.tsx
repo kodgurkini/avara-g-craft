@@ -6,16 +6,18 @@ interface TooltipProps {
   children: React.ReactNode;
   content: React.ReactNode;
   sideOffset?: number;
+  className?: string;
 }
 
 export default function Tooltip({
   children,
   content,
   sideOffset = 10,
+  className,
 }: TooltipProps) {
   return (
     <BaseTooltip.Root delay={50}>
-      <BaseTooltip.Trigger style={{ all: "unset" }}>
+      <BaseTooltip.Trigger className={className}>
         {children}
       </BaseTooltip.Trigger>
       <BaseTooltip.Portal>

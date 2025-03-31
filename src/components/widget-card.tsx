@@ -1,6 +1,8 @@
 import { RefreshIcon } from "./icons";
 import { useAppCardStore } from "../store/app-card-store";
 import Tooltip from "./tooltip";
+import useSound from "use-sound";
+import swosh from "../assets/swosh_01.mp3";
 
 const WidgetCard = ({
   item,
@@ -10,16 +12,20 @@ const WidgetCard = ({
   settings: React.ReactNode;
 }) => {
   const randomize = useAppCardStore((state) => state.randomize);
-
+  const [swoshIt] = useSound(swosh);
+  const randomizeMiddleware = () => {
+    randomize();
+    swoshIt();
+  };
   return (
     <div className="widget-card">
       <div className="widget-card-main">
         <div style={{ position: "absolute", top: "16px", right: "16px" }}>
-          <Tooltip content="Randomize">
-            <button className="icon-box" onClick={randomize}>
+          <div onClick={randomizeMiddleware}>
+            <Tooltip content="Randomize" className="icon-box">
               <RefreshIcon />
-            </button>
-          </Tooltip>
+            </Tooltip>
+          </div>
         </div>
         {item}
       </div>

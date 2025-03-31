@@ -1,14 +1,87 @@
-import { shapes, Pattern } from "./shape-data";
+import { shapes } from "./shape-data";
+
+const patterns = (patternKey: number, id: number) => {
+  const patternKey4 = patternKey % 4;
+
+  switch (patternKey4) {
+    case 0:
+      return (
+        <pattern
+          id={`pattern-${id}`}
+          patternUnits="userSpaceOnUse"
+          width="36"
+          height="36"
+        >
+          <path
+            d="M0 30 L120 30"
+            stroke="var(--symbol-color-dark)"
+            strokeWidth="6"
+            fill="none"
+            style={{ opacity: 0.25 }}
+          />
+        </pattern>
+      );
+    case 1:
+      return (
+        <pattern
+          id={`pattern-${id}`}
+          patternUnits="userSpaceOnUse"
+          width="120"
+          height="120"
+        >
+          <path
+            d="M30 0 Q50 30, 30 60 Q10 90, 30 120"
+            stroke="var(--symbol-color-dark)"
+            strokeWidth="6"
+            fill="none"
+            style={{ opacity: 0.25 }}
+          />
+        </pattern>
+      );
+    case 2:
+      return (
+        <pattern
+          id={`pattern-${id}`}
+          patternUnits="userSpaceOnUse"
+          width="120"
+          height="120"
+        >
+          <circle
+            cx="120"
+            cy="120"
+            r="12"
+            fill="var(--symbol-color-dark)"
+            style={{ opacity: 0.25 }}
+          />
+        </pattern>
+      );
+    case 3:
+      return (
+        <pattern
+          id={`pattern-${id}`}
+          patternUnits="userSpaceOnUse"
+          width="120"
+          height="120"
+        >
+          <path
+            d="M60 0 Q80 30, 60 60 Q40 90, 60 120"
+            stroke="var(--symbol-color-dark)"
+            strokeWidth="6"
+            fill="none"
+            style={{ opacity: 0.25 }}
+          />
+        </pattern>
+      );
+  }
+};
 
 const AppSymbol = ({
   shapeKey = 0,
-  color,
   shapeOnly = false,
   className = "",
   onClick = () => {},
 }: {
   shapeKey?: number;
-  color?: string;
   shapeOnly?: boolean;
   className?: string;
   onClick?: () => void;
@@ -44,92 +117,24 @@ const AppSymbol = ({
       className={`${className} spin`}
       style={{ padding: "12px" }}
     >
-      <defs>
-        {generatePattern(shape.pattern, shapeKey, color || shape.pattern.color)}
-      </defs>
+      <defs>{patterns(shapeKey, shapeKey)}</defs>
       <path
         d={shape.path}
         fill={`url(#pattern-${shapeKey})`}
         stroke="var(--symbol-color-dark)"
-        strokeWidth="10"
+        strokeWidth="3"
         transform="translate(10 10) scale(0.96)"
       />
       <path
         d={shape.path}
         fill="var(--symbol-color)"
-        fillOpacity="0.6"
+        fillOpacity="0.2"
         stroke="var(--symbol-color-dark)"
         strokeWidth="1"
         transform="translate(10 10) scale(0.96)"
       />
     </svg>
   );
-};
-
-// Function to generate SVG pattern definitions based on pattern type
-const generatePattern = (
-  pattern: Pattern,
-  id: number,
-  overrideColor?: string
-): string => {
-  const patternColor = overrideColor || pattern.color;
-
-  switch (pattern.type) {
-    case "lines":
-      return `
-          <pattern id="pattern-${id}" patternUnits="userSpaceOnUse" width="${
-        pattern.size * 2
-      }" height="${pattern.size * 2}" patternTransform="rotate(45)">
-            <line x1="0" y1="0" x2="0" y2="${
-              pattern.size * 2
-            }" stroke="${patternColor}" stroke-width="3"/>
-          </pattern>
-        `;
-    case "dots":
-      return `
-          <pattern id="pattern-${id}" patternUnits="userSpaceOnUse" width="${
-        pattern.size * 2
-      }" height="${pattern.size * 2}">
-            <circle cx="${pattern.size}" cy="${pattern.size}" r="${
-        pattern.size / 3
-      }" fill="${patternColor}"/>
-          </pattern>
-        `;
-    case "wavy":
-      return `
-          <pattern id="pattern-${id}" patternUnits="userSpaceOnUse" width="${
-        pattern.size * 4
-      }" height="${pattern.size * 2}">
-            <path d="M0 ${pattern.size} C ${pattern.size} 0, ${
-        pattern.size * 2
-      } ${pattern.size * 2}, ${pattern.size * 4} ${
-        pattern.size
-      }" stroke="${patternColor}" fill="none" stroke-width="${
-        pattern.size / 2
-      }"/>
-          </pattern>
-        `;
-    case "grid":
-      return `
-          <pattern id="pattern-${id}" patternUnits="userSpaceOnUse" width="${
-        pattern.size * 2
-      }" height="${pattern.size * 2}">
-            <rect width="${pattern.size * 2}" height="${
-        pattern.size * 2
-      }" fill="none" stroke="${patternColor}" stroke-width="${
-        pattern.size / 4
-      }"/>
-            <line x1="0" y1="${pattern.size}" x2="${pattern.size * 2}" y2="${
-        pattern.size
-      }" stroke="${patternColor}" stroke-width="${pattern.size / 4}"/>
-            <line x1="${pattern.size}" y1="0" x2="${pattern.size}" y2="${
-        pattern.size * 2
-      }" stroke="${patternColor}" stroke-width="${pattern.size / 4}"/>
-          </pattern>
-        `;
-    default:
-      return "";
-  }
 };
 
 export default AppSymbol;
