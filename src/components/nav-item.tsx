@@ -10,7 +10,6 @@ interface NavItemProps extends React.ComponentPropsWithoutRef<typeof Link> {
 const NavItem = ({ to, children, icon, ...props }: NavItemProps) => {
   const location = useLocation();
 
-  // Function to determine if the link is active
   const isActive = (path: string) => {
     return location.pathname === path;
   };

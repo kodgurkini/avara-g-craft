@@ -58,12 +58,14 @@
 .app-card-title {
   margin: 0;
   font-weight: 600;
+  user-select: none;
 }
 
 .app-card-subtitle {
   margin: 0;
   font-size: 14px;
   color: #848484;
+  user-select: none;
 }
 
 .app-card.size-small .app-card-title {
