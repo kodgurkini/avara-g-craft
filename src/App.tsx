@@ -5,7 +5,7 @@ import "./App.css";
 import RootLayout from "./layouts/root-layout";
 
 // Import pages
-import ProfilePage from "./pages/profile-page";
+import AppCardPage from "./pages/app-card-page";
 import HelpPage from "./pages/help-page";
 import SocialGraphPage from "./pages/social-graph";
 import FeedPage from "./pages/feed-page";
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <ProfilePage />,
+        element: <AppCardPage />,
       },
       {
         path: "social-graph",

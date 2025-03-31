@@ -54,7 +54,7 @@ function RootLayout() {
                   </svg>
                 }
               >
-                Profile Card
+                App Card
               </NavItem>
               <NavItem
                 to="/social-graph"
