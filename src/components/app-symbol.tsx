@@ -18,9 +18,10 @@ const AppSymbol = ({
   if (shapeOnly) {
     return (
       <svg
+        key={shapeKey}
         xmlns="http://www.w3.org/2000/svg"
         viewBox="-10 -10 500 500"
-        className={className}
+        className={`${className} spin`}
         style={{ padding: "8px" }}
         onClick={onClick}
       >
@@ -35,9 +36,10 @@ const AppSymbol = ({
 
   return (
     <svg
+      key={shapeKey}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="-10 -10 500 500"
-      className={className}
+      className={`${className} spin`}
       style={{ padding: "12px" }}
     >
       <defs>

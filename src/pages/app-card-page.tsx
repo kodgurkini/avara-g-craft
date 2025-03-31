@@ -18,7 +18,7 @@ function AppCardPage() {
       />
 
       <section>
-        <WidgetCard item={<AppCard />} settings={<AppCardSettings />} />
+        <WidgetCard item={<AppPreviewCard />} settings={<AppCardSettings />} />
       </section>
     </div>
   );
@@ -26,7 +26,7 @@ function AppCardPage() {
 
 export default AppCardPage;
 
-const AppCard = () => {
+const AppPreviewCard = () => {
   const { appName, symbolShape, symbolColor, size } = useAppCardStore();
 
   return (
@@ -67,25 +67,6 @@ const AppCardSettings = () => {
                 <DropdownPopover
                   buttonIcon={
                     <>
-                      <AppSymbol
-                        shapeKey={symbolShape}
-                        color={symbolColor}
-                        shapeOnly={true}
-                        className="shape-popover-preview"
-                      />
-                      <span style={{ fontWeight: "400" }}>
-                        {shapes[symbolShape].name}
-                      </span>
-                    </>
-                  }
-                >
-                  <SymbolGrid />
-                </DropdownPopover>
-              </div>
-              <div style={{ flex: 1 }}>
-                <DropdownPopover
-                  buttonIcon={
-                    <>
                       <div
                         style={{
                           width: "16px",
@@ -103,6 +84,25 @@ const AppCardSettings = () => {
                   }
                 >
                   <ColorContent />
+                </DropdownPopover>
+              </div>
+              <div style={{ flex: 1 }}>
+                <DropdownPopover
+                  buttonIcon={
+                    <>
+                      <AppSymbol
+                        shapeKey={symbolShape}
+                        color={symbolColor}
+                        shapeOnly={true}
+                        className="shape-popover-preview"
+                      />
+                      <span style={{ fontWeight: "400" }}>
+                        {shapes[symbolShape].name}
+                      </span>
+                    </>
+                  }
+                >
+                  <SymbolGrid />
                 </DropdownPopover>
               </div>
             </div>

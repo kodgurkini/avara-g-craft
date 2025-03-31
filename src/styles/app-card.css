@@ -169,3 +169,21 @@
   width: 20px;
   height: 20px;
 }
+
+.app-avatar-wrapper svg {
+  transform: rotate(0deg);
+  transition: none;
+}
+
+.app-avatar-wrapper svg.spin {
+  transform: rotate(0deg);
+  filter: blur(0px) grayscale(0) brightness(1);
+  transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@starting-style {
+  .app-avatar-wrapper svg.spin {
+    transform: rotate(-360deg);
+    filter: blur(3px) grayscale(1) brightness(1.2);
+  }
+}

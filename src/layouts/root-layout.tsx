@@ -22,7 +22,7 @@ function RootLayout() {
               style={
                 {
                   "--indicator-left": "0px",
-                  "--indicator-width": "112.83px",
+                  "--indicator-width": "97.25px",
                   position: "relative",
                 } as React.CSSProperties
               }
