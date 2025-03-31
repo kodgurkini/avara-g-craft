@@ -6,7 +6,7 @@ import DropdownPopover from "./dropdown-popover";
 import { HexColorPicker } from "react-colorful";
 import { Popover as BasePopover } from "@base-ui-components/react/popover";
 import useSound from "use-sound";
-import swosh from "../assets/swosh_01.mp3";
+import swosh from "../assets/swosh_11labs.mp3";
 
 const AppCardSettings = () => {
   const { appName, symbolShape, symbolColor, setAppName } = useAppCardStore();
@@ -90,7 +90,7 @@ const SymbolGrid = () => {
         gap: "8px",
       }}
     >
-      {shapes.map((shape, index) => (
+      {shapes.map((_, index) => (
         <BasePopover.Close
           className={`shape-button ${symbolShape === index ? "active" : ""}`}
         >

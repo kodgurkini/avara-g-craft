@@ -233,3 +233,20 @@
   font-weight: 400;
   animation: fadeIn 0.12s ease-in;
 }
+
+.animated-divider {
+  margin: 12px 0 24px;
+  width: 100%;
+  overflow: hidden;
+  max-width: 770px;
+}
+
+.animated-divider svg line {
+  animation: dash-animation 20s linear infinite;
+}
+
+@keyframes dash-animation {
+  to {
+    stroke-dashoffset: -100;
+  }
+}

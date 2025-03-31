@@ -2,12 +2,12 @@ import AppSymbol from "./app-symbol";
 import { useAppCardStore } from "../store/app-card-store";
 
 const AppPreviewCard = () => {
-  const { appName, symbolShape, symbolColor, size } = useAppCardStore();
+  const { appName, symbolShape, size } = useAppCardStore();
 
   return (
     <div className={`app-card size-${size}`}>
       <div className="app-avatar-wrapper">
-        <AppSymbol shapeKey={symbolShape} color={symbolColor} />
+        <AppSymbol shapeKey={symbolShape} />
       </div>
       <div className="app-card-content">
         <h3

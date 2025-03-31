@@ -2,7 +2,7 @@ import { RefreshIcon } from "./icons";
 import { useAppCardStore } from "../store/app-card-store";
 import Tooltip from "./tooltip";
 import useSound from "use-sound";
-import swosh from "../assets/swosh_01.mp3";
+import swosh from "../assets/swosh_11labs.mp3";
 
 const WidgetCard = ({
   item,
