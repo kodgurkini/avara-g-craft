@@ -17,7 +17,7 @@ const patterns = (patternKey: number, id: number) => {
             stroke="var(--symbol-color-dark)"
             strokeWidth="6"
             fill="none"
-            style={{ opacity: 0.25 }}
+            style={{ opacity: 0.33 }}
           />
         </pattern>
       );
@@ -34,7 +34,7 @@ const patterns = (patternKey: number, id: number) => {
             stroke="var(--symbol-color-dark)"
             strokeWidth="6"
             fill="none"
-            style={{ opacity: 0.25 }}
+            style={{ opacity: 0.33 }}
           />
         </pattern>
       );
@@ -51,7 +51,7 @@ const patterns = (patternKey: number, id: number) => {
             cy="120"
             r="12"
             fill="var(--symbol-color-dark)"
-            style={{ opacity: 0.25 }}
+            style={{ opacity: 0.33 }}
           />
         </pattern>
       );
@@ -68,7 +68,7 @@ const patterns = (patternKey: number, id: number) => {
             stroke="var(--symbol-color-dark)"
             strokeWidth="6"
             fill="none"
-            style={{ opacity: 0.25 }}
+            style={{ opacity: 0.33 }}
           />
         </pattern>
       );
@@ -100,9 +100,7 @@ const AppSymbol = ({
       >
         <path
           d={shape.path}
-          fill="none"
-          stroke="var(--color-gray-800)"
-          strokeWidth="8"
+          fill="var(--color-gray-600)"
           transform="translate(10 10) scale(0.96)"
         />
       </svg>
@@ -122,7 +120,7 @@ const AppSymbol = ({
         d={shape.path}
         fill={`url(#pattern-${shapeKey})`}
         stroke="var(--symbol-color-dark)"
-        strokeWidth="3"
+        strokeWidth="6"
         transform="translate(10 10) scale(0.96)"
       />
       <path
