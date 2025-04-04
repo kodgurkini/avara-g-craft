@@ -1,4 +1,3 @@
-import * as React from "react";
 import { Toggle } from "@base-ui-components/react/toggle";
 import { ToggleGroup } from "@base-ui-components/react/toggle-group";
 import styles from "../styles/toggle.module.css";
