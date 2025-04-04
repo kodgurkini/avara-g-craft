@@ -11,8 +11,15 @@ const DropdownPopover = ({
   children: React.ReactNode;
   onOpenChange?: (open: boolean) => void;
 }) => {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  const handleOpenChange = (open: boolean) => {
+    setIsOpen(open);
+    onOpenChange?.(open);
+  };
+
   return (
-    <BasePopover.Root onOpenChange={onOpenChange}>
+    <BasePopover.Root onOpenChange={handleOpenChange}>
       <BasePopover.Trigger className={styles.InputField}>
         {buttonIcon}
         <svg
@@ -21,7 +28,12 @@ const DropdownPopover = ({
           viewBox="0 0 16 16"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          style={{ marginLeft: "auto", marginRight: "12px" }}
+          style={{
+            marginLeft: "auto",
+            marginRight: "12px",
+            transform: `rotate(${isOpen ? 180 : 0}deg)`,
+            transition: "transform 0.12s ease",
+          }}
         >
           <path
             d="M4 6L8 10L12 6"

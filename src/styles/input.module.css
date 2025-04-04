@@ -13,9 +13,10 @@
   background-color: transparent;
   color: var(--color-gray-900);
   background-color: #fff;
+  transition: box-shadow 0.2s ease;
+  box-shadow: 0 0 0 0px var(--color-gray-900);
 
   &:focus {
-    outline: 2px solid var(--color-gray-900);
-    outline-offset: -1px;
+    outline: none;
   }
 }
