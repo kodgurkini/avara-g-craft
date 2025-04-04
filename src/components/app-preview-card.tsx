@@ -5,8 +5,14 @@ const AppPreviewCard = () => {
   const { appName, symbolShape, size } = useAppCardStore();
 
   return (
-    <div className={`app-card size-${size}`}>
-      <div className="app-avatar-wrapper">
+    <div
+      className={`app-card size-${size}`}
+      style={{ viewTransitionName: "card" }}
+    >
+      <div
+        className="app-avatar-wrapper"
+        style={{ viewTransitionName: "avatar" }}
+      >
         <AppSymbol shapeKey={symbolShape} />
       </div>
       <div className="app-card-content">
@@ -14,11 +20,17 @@ const AppPreviewCard = () => {
           className="app-card-title"
           style={{
             color: appName ? "var(--color-gray-900)" : "var(--color-gray-500)",
+            viewTransitionName: "title",
           }}
         >
           {appName || "No name"}
         </h3>
-        <p className="app-card-subtitle">310 000 users</p>
+        <p
+          className="app-card-subtitle"
+          style={{ viewTransitionName: "subtitle" }}
+        >
+          310 000 users
+        </p>
       </div>
     </div>
   );

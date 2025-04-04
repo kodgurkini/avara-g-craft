@@ -113,7 +113,7 @@ const AppSymbol = ({
       xmlns="http://www.w3.org/2000/svg"
       viewBox="-10 -10 500 500"
       className={`${className} spin`}
-      style={{ padding: "12px" }}
+      style={{ padding: "10px" }}
     >
       <defs>{patterns(shapeKey, shapeKey)}</defs>
       <path

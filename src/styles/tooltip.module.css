@@ -13,6 +13,7 @@
 }
 
 .Popup {
+  color: var(--color-gray-900);
   box-sizing: border-box;
   font-size: 0.875rem;
   line-height: 1.25rem;

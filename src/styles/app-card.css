@@ -1,5 +1,29 @@
-/* App card styles */
-/* Size variants */
+::view-transition-old(card),
+::view-transition-new(card) {
+  animation: none;
+  mix-blend-mode: normal;
+  height: 100%;
+}
+
+::view-transition-old(avatar),
+::view-transition-new(avatar) {
+  animation-duration: 0.2s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%;
+}
+
+::view-transition-old(title),
+::view-transition-new(title) {
+  animation-duration: 0.12s;
+  animation-timing-function: ease-out;
+}
+
+::view-transition-old(subtitle),
+::view-transition-new(subtitle) {
+  animation-duration: 0.12s;
+  animation-timing-function: ease-in;
+}
+
 .app-card {
   display: flex;
   align-items: center;
@@ -7,11 +31,12 @@
   background: #fafafa;
   padding: 16px;
   border-radius: 1.4rem;
-  min-width: 364px;
+  width: 100%;
 }
 
 .app-card.size-small {
   max-width: 240px;
+  padding: 12px;
 }
 
 .app-card.size-medium {
@@ -26,8 +51,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
+  width: 64px;
+  height: 64px;
   border-radius: 12px;
   overflow: hidden;
   flex-shrink: 0;
@@ -37,8 +62,8 @@
 }
 
 .app-card.size-small .app-avatar-wrapper {
-  width: 36px;
-  height: 36px;
+  width: 48px;
+  height: 48px;
   border-radius: 10px;
 }
 
@@ -73,7 +98,7 @@
 }
 
 .app-card.size-small .app-card-subtitle {
-  font-size: 16px;
+  font-size: 12px;
 }
 
 .app-card.size-large .app-card-title {
