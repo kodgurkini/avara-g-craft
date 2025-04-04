@@ -157,7 +157,6 @@
 }
 
 .shape-button.active {
-  border-color: var(--gray-700);
   background-color: #f5f5f5;
 }
 

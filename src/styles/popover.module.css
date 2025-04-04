@@ -43,7 +43,7 @@
   box-sizing: border-box;
   padding: 16px;
   border-radius: 12px;
-  background-color: canvas;
+  background-color: #fff;
   color: var(--color-gray-900);
   transform-origin: var(--transform-origin);
   transition: transform 125ms, opacity 125ms;
@@ -83,7 +83,7 @@
 }
 
 .ArrowFill {
-  fill: canvas;
+  fill: #fff;
 }
 
 .ArrowOuterStroke {
