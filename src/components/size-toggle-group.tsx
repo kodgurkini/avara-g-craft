@@ -18,11 +18,11 @@ export default function SizeToggleGroup() {
       defaultValue={["large"]}
       className={styles.Panel}
       onValueChange={(value) => {
+        const size = value[0] as "small" | "medium" | "large";
+        if (!size || size === prevSize) return;
+
         document.startViewTransition(() => {
           flushSync(() => {
-            const size = value[0] as "small" | "medium" | "large";
-            if (!size) return;
-
             setSize(size);
 
             const sizeValues = { small: 1, medium: 2, large: 3 };
