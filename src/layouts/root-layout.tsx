@@ -20,9 +20,9 @@ function RootLayout() {
       {!isFirstLoad && <div className="progress-bar" key={location.pathname} />}
       <header className="app-header">
         <div className="header-top">
-          <div className="header-top-content">
+          {/*  <div className="header-top-content">
             <Logo />
-          </div>
+          </div> */}
         </div>
         <div className="header-bottom">
           <div className="header-bottom-content">
